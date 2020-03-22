@@ -1,0 +1,84 @@
+{% extends "_layout.html.jinja2" %}
+{% block content %}
+
+<form action="/supermarkets" method="get" id="search-form">
+    <div class="container">
+        <div class="row form-group">
+            <div class="input-group">
+                <input type="text" name="location" placeholder="dein Standort, bspw. „97072”, „Berlin“ oder „Musterstraße 4, Berlin“" value="{{location if location}}"
+                       class="btn-block form-control col-12 mx-auto" id="searchInput"
+                       aria-describedby="searchBar">
+                <div class="input-group-append">
+                    <button class="btn btn-info btn-block" type="submit">Suche</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+{% if location %}
+
+    {% if not livemode %}
+    <div class="alert demo-alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>Demo-Modus!</strong> <br>
+        <a href="/supermarkets?livemode=True&location={{ location }}">Lade jetzt Live-Ergebnisse (dauert ein paar Sekunden)</a>. <br>
+        Zu Demozwecken werden gerade nur generierte Demodaten für eine Adresse in Würzburg gezeigt.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% endif %}
+
+    <small class="text-muted">
+        Auslastung Stand {{ current_time }} <br>
+
+        {% if livemode %}
+            (Live-Ergebnisse von Google Maps)
+        {% else %}
+            (Demo-Ergebnisse)
+        {% endif %}
+    </small>
+
+
+    {% if place_details %}
+    <!--<h4 class="mt-4 mb-4">Ergebnisse für {{ location }}</h4>-->
+
+    <div class="list-group w-100">
+        {% for place in place_details %}
+    {#        <pre>#}
+    {#        {{ place }}#}
+    {#        </pre>#}
+        <div class="list-group-item {{ "text-muted bg-light" if not place["open_now"] }}">
+            <h5 class="card-title mb-0 market-line"><a href="https://www.google.com/maps/search/?api=1&query={{ place["address"] }}&query_place_id={{ place["place"]["place_id"] }}" target="_blank">{{ place["name"] }}</a>
+            <span class="badge badge-primary badge-pill float-right">🥾️ {{ place["distance"]["rows"][0]["elements"][0]["distance"]["text"] }}</span></h5>
+            <h6 class="text-muted">{{ place["address"] }}</h6>
+
+            <div class="w-100">
+                <div class="progress progress-bar-own">
+                    <div class="progress-bar {{ place["current_popularity_css_class"] }}" style="width: {{ place["current_popularity"] }}%; color: black;" role="progressbar"
+                    aria-valuenow="{{ place["current_popularity"] }}" aria-valuemin="0" aria-valuemax="100"><span
+                        class="justify-content-center d-flex position-absolute w-100">{{ place["current_popularity_text"]
+                    }}</span></div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+        <div class="alert alert-danger">
+            Google konnte deine Suchanfrage leider nicht zuordnen, bitte formuliere deine Suche bspw. so: "Freiburg" oder "Korwisistraße 8, Berlin"
+        </div>
+    {% endif %}
+{% else %}
+    <div class="alert alert-info">
+    <i>Gib eine Adresse in die Suchleiste ein um Ergebnisse zu bekommen</i>
+    </div>
+{% endif %}
+<!--
+<div class="row">
+    <div class="col-12 mx-auto mt-2">
+        <a class="btn btn-outline-info btn-block" href="/" role="button">Zurück</a>
+    </div>
+</div>
+-->
+{% endblock %}

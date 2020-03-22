@@ -1,0 +1,58 @@
+<!doctype html>
+  <html lang="en">
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+      <meta name="HandheldFriendly" content="true" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/own.css">
+
+    <title>Leermarkt</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header style="padding-top: 1em; padding-bottom: 0.5em;" class="supermarket-color text-center mb-5">
+      <div class="container">
+        <div class="col-8 mx-auto">
+          <a href="/">
+          <img height="80em" style="" src="/static/logo.svg"/>
+        </a>
+        </div>
+      </div>
+
+        <!--
+      <div class="row">
+        <input type="text" class="form-control form-control-lg col-8 mx-auto search-field" id="searchInput" aria-describedby="searchBar" placeholder="Postleitzahl">
+      </div>
+    -->
+  </header>
+
+  <!-- Page Content -->
+  <div class="container">
+
+      {% block content %}{% endblock %}
+
+  </div>
+<!-- /.container -->
+
+    <footer>
+        <div class="text-center py-3 bg-dark text-light">
+            Erstellt wärend des <a href="https://wirvsvirushackathon.org">#wirsindwirhackathon</a> von Elli, David O., David M., Flo, Michael, Markus und Chris <br>
+            Hosting sponsored by <a href="https://sophisticates.de" target="_blank"><svg id="sophisticates_logo" version="1.1" x="0px" y="0px" viewBox="0 0 1314.8 272.1"><path fill="#ffffff" d="M278.4,138.3c-3.3-2.8-6.6-4-13.5-5l-8-1.2c-3.9-0.5-7.5-2-10.6-4.4c-2.4-2-3.6-5-3.6-9.1 c0-8.9,6.3-14.5,16.4-14.5c8.3,0,12.7,2.4,17.4,6.7l0.5,0.5l4.7-4.7l-0.6-0.5c-6.8-5.9-12.9-8.2-21.7-8.2c-14.4,0-23.6,8.2-23.6,21 c0,6,2,10.8,6.1,14.1c3.3,2.9,7.8,4.7,13.5,5.6l8.7,1.3c5.9,0.9,7.7,1.6,10.3,3.8s3.8,5.6,3.8,9.8c0,9.1-6.8,14.5-18.2,14.5 c-8.9,0-14.1-2.1-20.4-8.5l-0.5-0.5l-5,5l0.5,0.5c7.2,7.2,14.2,10,25.1,10c15.6,0,25.6-8.3,25.6-21.2 C285.3,147.5,282.8,142,278.4,138.3z"></path><path fill="#ffffff" d="M347.1,97.8c-7.1-0.1-14,2.8-19,7.8c-7.1,7.1-7.1,13.9-7.1,30.5s0,23.4,7.1,30.5c10.5,10.4,27.4,10.4,38,0 c7.1-7.1,7.1-13.9,7.1-30.5s0-23.4-7.1-30.5C361,100.6,354.2,97.8,347.1,97.8z M366.1,136.1c0,15.8-0.4,21.3-5.5,26.3 c-7.5,7.3-19.4,7.3-26.9,0c-5.1-5.1-5.5-10.6-5.5-26.3s0.4-21.3,5.5-26.3c7.5-7.3,19.5-7.3,26.9,0 C365.6,114.8,366.1,120.3,366.1,136.1L366.1,136.1z"></path><path fill="#ffffff" d="M442.1,98.4h-27.8v75.3h7.1v-31.3h20.7c13.8,0,23-8.8,23-22S455.9,98.4,442.1,98.4z M458.1,120.4 c0,9.9-6,15.5-16.6,15.5h-20.1v-31.1h20.1C452.1,104.9,458.1,110.5,458.1,120.4L458.1,120.4z"></path><polygon fill="#ffffff" points="546.6,132.5 509.6,132.5 509.6,98.4 502.6,98.4 502.6,173.7 509.6,173.7 509.6,139 546.6,139 546.6,173.7 553.7,173.7 553.7,98.4 546.6,98.4 "></polygon><rect x="597.8" y="98.4" fill="#ffffff" width="7.1" height="75.3"></rect><path fill="#ffffff" d="M687.1,138.3c-3.3-2.8-6.6-4-13.5-5l-8-1.2c-3.9-0.5-7.5-2.1-10.6-4.4c-2.4-2-3.6-5-3.6-9.1 c0-8.9,6.3-14.5,16.4-14.5c8.3,0,12.7,2.4,17.5,6.7l0.5,0.5l4.7-4.7l-0.6-0.5c-6.8-5.9-12.8-8.2-21.7-8.2c-14.4,0-23.7,8.2-23.7,21 c0,6,2,10.8,6.1,14.1c3.3,2.9,7.8,4.7,13.5,5.6l8.6,1.4c5.9,0.9,7.7,1.6,10.3,3.8s3.8,5.6,3.8,9.8c0,9.1-6.8,14.5-18.2,14.5 c-8.9,0-14.1-2.1-20.4-8.5l-0.5-0.5l-5,5l0.5,0.5c7.2,7.2,14.2,10,25.1,10c15.6,0,25.6-8.3,25.6-21.2 C694,147.5,691.5,142,687.1,138.3z"></path><polygon fill="#ffffff" points="724.4,104.9 746.4,104.9 746.4,173.7 753.4,173.7 753.4,104.9 775.5,104.9 775.5,98.4 724.4,98.4 "></polygon><rect x="811.3" y="98.4" fill="#ffffff" width="7.1" height="75.3"></rect><path fill="#ffffff" d="M885.7,104.2c9.5,0,16.5,6,18.7,16l0.1,0.6h7.2l-0.2-0.9c-2.4-13.7-12.3-22.2-25.8-22.2c-7.1-0.1-14,2.8-19,7.8 c-7.1,7.1-7.1,13.9-7.1,30.5s0,23.4,7.1,30.5c5,5,11.9,7.8,19,7.8c13.5,0,23.4-8.5,25.8-22.2l0.2-0.9h-7l-0.1,0.6 c-2.1,9.9-9.3,16-18.9,16c-5,0-9.9-1.9-13.5-5.5c-5.1-5.1-5.5-10.6-5.5-26.3s0.4-21.3,5.5-26.3C875.8,106.2,880.6,104.2,885.7,104.2 z"></path><path fill="#ffffff" d="M968.6,98.4l-27.7,75.3h7.6l6.4-17.9h33.4l6.4,17.9h7.6l-27.7-75.3L968.6,98.4z M986,149.3h-28.8l14.4-40.5 L986,149.3z"></path><polygon fill="#ffffff" points="1021.8,104.9 1043.7,104.9 1043.7,173.7 1050.8,173.7 1050.8,104.9 1072.9,104.9 1072.9,98.4 1021.8,98.4 "></polygon><polygon fill="#ffffff" points="1108.7,173.7 1155,173.7 1155,167.2 1115.8,167.2 1115.8,139 1149.2,139 1149.2,132.5 1115.8,132.5 1115.8,104.9 1155,104.9 1155,98.4 1108.7,98.4 "></polygon><path fill="#ffffff" d="M1231.6,138.3c-3.3-2.8-6.6-4-13.5-5l-8-1.2c-3.9-0.5-7.5-2-10.6-4.4c-2.4-2-3.6-5-3.6-9.1 c0-8.9,6.3-14.5,16.4-14.5c8.3,0,12.7,2.4,17.4,6.7l0.5,0.5l4.7-4.7l-0.6-0.5c-6.8-5.9-12.9-8.2-21.7-8.2c-14.4,0-23.7,8.2-23.7,21 c0,6,2,10.8,6.1,14.1c3.3,2.9,7.8,4.7,13.5,5.6l8.6,1.4c5.9,0.9,7.7,1.6,10.3,3.8s3.8,5.6,3.8,9.8c0,9.1-6.8,14.5-18.2,14.5 c-8.9,0-14.1-2.1-20.4-8.5l-0.5-0.5l-5,5l0.5,0.5c7.2,7.2,14.2,10,25.1,10c15.6,0,25.6-8.3,25.6-21.2 C1238.5,147.5,1236,142,1231.6,138.3z"></path><polygon fill="#ffffff" opacity="0.5" points="196.9,119.3 196.9,119.3 196.9,119.3 180.6,100.2 118.2,173.2 136,195.6 196.9,119.3 "></polygon><polygon fill="#ffffff" opacity="0.8" points="155.1,123.3 177.8,96.8 160.5,76.5 98.7,148.8 105.9,157.9 114.9,169.1 114.9,169.2 "></polygon><polygon fill="#ffffff" points="95.9,145.5 154.9,76.5 114.7,76.5 76.5,121.2 "></polygon></svg></a>
+        </div>
+      <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

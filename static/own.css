@@ -1,0 +1,128 @@
+.supermarket-color {
+background-color: #5ABAA7!important;
+}
+
+.search-field {
+	margin-top: 1.5em;
+}
+
+.category-entry {
+	margin-bottom: 1.5em;
+}
+
+.card:hover {
+	background-color: lightgrey;
+  	animation-name: fadetogrey;
+  	animation-duration: 0.5s;
+}
+
+@keyframes fadetogrey {
+  from {background-color: white;}
+  to {background-color: lightgrey;}
+}
+
+.market-address{
+	color: gray;
+}
+
+.market-line{
+	padding-bottom: 0.1em;
+}
+
+.progress-bar-own {
+	margin-top: 1em;
+	height: 30px;
+}
+
+.card {
+	padding-top: 1em;
+}
+
+.logo {
+  background-image: url(logo.svg);
+}
+
+input {
+text-align: center;
+}
+
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+
+.popularity-light-good {
+	background-color: #3B9529;
+}
+.popularity-light-bad {
+	background-color: #EF8D22;
+}
+.popularity-light-worse {
+	background-color: #C92939;
+}
+
+::-webkit-input-placeholder {
+
+   text-align: center;
+
+}
+
+:-moz-placeholder { /* Firefox 18- */
+
+   text-align: center;
+
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+
+   text-align: center;
+
+}
+
+:-ms-input-placeholder {  
+
+   text-align: center;
+
+}
+
+body,
+.bootstrap-container *,    
+.bootstrap-container body, 
+.bootstrap-container td, 
+.bootstrap-container tr, 
+.bootstrap-container div, 
+.bootstrap-container p, 
+.bootstrap-container form, 
+.bootstrap-container input, 
+.bootstrap-container select, 
+.bootstrap-container textarea, 
+.bootstrap-container font {
+font-family: 'Open Sans', sans-serif !important;
+}
+
+form#search-form {
+	background: #eee;
+	margin: -2.5em 0 2em 0;
+	padding: 1em;
+	border-radius: 4px;
+}
+
+form#search-form .form-group {
+	margin-bottom: 0;
+}
+
+.demo-alert {
+	margin-top: -1em;
+}
+
+.bg-light .badge-primary {
+	background-color: #ccc;
+}
+
+footer {
+	margin-top: 10em;
+}
+
+#sophisticates_logo {
+	height: 2.5em;
+}

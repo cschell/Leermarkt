@@ -1,0 +1,15 @@
+{% extends "_layout.html.jinja2" %}
+{% block content %}
+
+<form action="/supermarkets" method="post">
+    <div class="container">
+        <div class="row">
+            <input type="text" name="location" placeholder="Dein Standort"
+                   class="btn-block form-control form-control-lg col-12 mx-auto" id="searchInput"
+                   aria-describedby="searchBar">
+            <input type="submit" value="checke Supermärkte" class="btn btn-large">
+        </div>
+    </div>
+</form>
+
+{% endblock %}
